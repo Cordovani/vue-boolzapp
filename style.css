@@ -75,6 +75,7 @@
     height: 75%;
     display: flex;
     position: relative;
+    padding: 0 15px;
 }
 
 .search .roundInput {
