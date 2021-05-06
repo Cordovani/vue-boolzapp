@@ -29,7 +29,7 @@
 
         <div class="container">
             <div class="column-left">
-             <!-- user profile -->
+                <!-- user profile -->
                 <div class="barUI">
                     <img src="img/avatar_io.jpg" alt="" class="icoSmall">
 
@@ -96,11 +96,18 @@
                 </div>
 
                 <!-- chat messaggi -->
-                <div class="chat">
-                    <div class="sent"></div>
-                    <div class="received"></div>
-                </div>
+                <!-- renderizzo tutti i messaggi dell'utente selezionato -->
+                <!-- utilizzo index per la key identificativa -->
+                <div class="chat-box">
+                    <div class="message" v-for="(message,index) in selectedUser.messages"
+                        :class="{received: message.status === 'received', sent: message.status === 'sent'}"
+                        :key="index">
+                        {{message.text}}
 
+                        <!-- <div class="sent"></div>
+                    <div class="received"></div>  placeholder HTML-->
+                    </div>
+                </div>
                 <!-- invio messaggio -->
                 <div class="barUI">
                     <i class="fa fa-smile-o" aria-hidden="true"></i>

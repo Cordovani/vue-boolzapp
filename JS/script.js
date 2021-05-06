@@ -15,6 +15,5 @@ var app = new Vue({
         onUserClick(user){
             this.selectedUser = user;
         }  
-
     }
 })

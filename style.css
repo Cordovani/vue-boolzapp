@@ -48,6 +48,7 @@
     display: flex;
     align-items:center;
     padding-left: 3px;
+    margin-bottom: 3px;
     
 }
 
@@ -116,7 +117,7 @@
 
 .container{
     background-color: white;
-    height: 65vh;
+    height: 70vh;
     width: 75vw;
     z-index: 1;
     display: flex;
@@ -141,12 +142,20 @@
 	justify-content: space-between;
 }
 
-/* CLASSI PER I MESSAGGI */
-.chat{
+/* CLASSI PER I MESSAGGI E CHAT*/
+
+.chat-box {
     display: flex;
     flex-direction: column;
     height: calc(100% - 140px);
     padding: 15px;
+}
+
+.message{
+    display: flex;
+    flex-direction: column;   
+    padding: 15px;
+    margin-bottom: 15px;
 }
 
 .sent{
@@ -154,8 +163,8 @@
     background-color: green;
     border-radius: 5px;
     align-self:flex-end;
-    width: 75px;
-    height: 50px;
+    /* width: 75px; placeholder
+    height: 50px; */
 
 }
 
@@ -164,7 +173,7 @@
     background-color: white;
     border-radius: 5px;
     align-self: flex-start;
-    width: 75px;
-    height: 50px;
+    /* width: 75px;
+    height: 50px; */
 
 }
