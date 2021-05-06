@@ -81,4 +81,4 @@ const globalUsersList = [
             }
         ],
     },
-];
+]

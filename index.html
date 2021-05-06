@@ -109,12 +109,14 @@
                     <div class="received"></div>  placeholder HTML-->
                     </div>
                 </div>
+
                 <!-- invio messaggio -->
                 <div class="barUI">
                     <i class="fa fa-smile-o" aria-hidden="true"></i>
 
                     <div class="roundInput">
-                        <input class="input" type="text">
+                        <!-- prendo l'input dell'utente e lo pusho nell'array di selectedUser -->
+                        <input class="input" type="text" @keyup.enter="sendMessage" v-model="newText">
                     </div>
 
                     <i class="fa fa-microphone" aria-hidden="true"></i>
