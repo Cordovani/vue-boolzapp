@@ -2,27 +2,25 @@
 <html lang="en">
 
 <head>
-    
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boolzapp</title>
-    
+
     <!-- style -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
-    
+
     <!-- moment.js per parsare la data -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
-    
-    <!-- formatto le date con moment.js -->
-    <script src="/JS/contatti.js"></script>
-    <script src="/JS/script.js"></script>
+
 
 </head>
 
 <body>
+
 
     <div id="main">
 
@@ -30,21 +28,16 @@
         <div class="bottom"></div>
 
         <div class="container">
-
-            <div class="column">
-
-                <!-- user profile -->
+            <div class="column-left">
+             <!-- user profile -->
                 <div class="barUI">
                     <img src="img/avatar_io.jpg" alt="" class="icoSmall">
-
-                   
 
                     <div class="ico">
                         <i class="fa fa-circle-o-notch" aria-hidden="true"></i>
                         <i class="fa fa-comment" aria-hidden="true"></i>
                         <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
                     </div>
-
                 </div>
 
                 <!-- notification area -->
@@ -70,33 +63,35 @@
 
                 <!-- l'elenco delle chat -->
                 <div>
-                    
+
                     <!-- v-for per popolare la lista contatti-->
                     <!-- key come identificativo unico -->
-                    <div class="user" v-for="(user, index) in userList" :key="index" @click="onUserClick(user)">
-                        <img :src="getAvatarpath(user.avatar)" alt="immagine utente" class="bigIco">
+                    <div class="user" v-for="(user, index) in usersList" :key="index" @click="onUserClick(user)">
+                        <img :src="getAvatarPath(user.avatar)" alt="immagine utente" class="bigIco">
                         <!-- nome e "non ci sono messaggi" -->
-                        
-                        <strong>{{user.name}}</strong>
+
+                        <div class="name-last-message">
+                            <strong>{{user.name}}</strong>
+                            <br>
+                            <p>Non ci sono messaggi!</p>
+                        </div>
 
                     </div>
-
                 </div>
-                
             </div>
 
             <div id="column-right" class="column">
                 <!-- l'utente corrente -->
                 <div class="barUI">
-                    <img src="img/avatar_3.jpg" alt="" class="icoSmall">
+                    <img :src="`img/avatar${selectedUser.avatar}.jpg`" alt="" class="icoSmall">
 
                     <div>
-                        <h3>Fabio</h3>
+                        <strong>{{selectedUser.name}}</strong>
                     </div>
 
                     <div class="ico">
                         <i class="fa fa-search" aria-hidden="true"></i>
-                        <i class="fa fa-ellipsis-v" aria-hidden="true"></i> 
+                        <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
                     </div>
                 </div>
 
@@ -120,8 +115,12 @@
         </div>
     </div>
 
+    <!-- formatto le date con moment.js -->
+    <script src="/JS/contatti.js"></script>
+    <script src="/JS/script.js"></script>
 
 
 </body>
+
 
 </html>

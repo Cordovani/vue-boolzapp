@@ -10,6 +10,7 @@
     border-radius: 50%;
 }
 
+
 .bigIco {
     width: 60px;
     height: 60px;
@@ -45,10 +46,18 @@
 .user {
     background-color: white;
     display: flex;
+    align-items:center;
     padding-left: 3px;
     
 }
 
+.user:hover {
+	background-color: aliceblue;
+}
+
+.fa:hover {
+    color: #4141bf;
+}
 
 #main {
     /* display: flex; */
@@ -116,7 +125,7 @@
     margin-left: 12vw;
 }
 
-.column {
+.column-left {
     height: 300px;
 	background-color: #ededed;
 	width: 34%;

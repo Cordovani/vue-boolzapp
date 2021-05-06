@@ -4,7 +4,7 @@ var app = new Vue({
     el: '#main',
     data: {
         usersList: globalUsersList,
-        selectedUser = null
+        selectedUser: {}
     },
     methods: {
         // restituisce il path per cambiare immagine
