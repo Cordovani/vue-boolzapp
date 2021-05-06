@@ -16,12 +16,10 @@
     border-radius: 50%;
     background-color: white;
     color: #9ee1fe;
-}
-
-.notifi{
-    height: 80px;
-    background-color: #9ee1fe;
     display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px;
 }
 
 .search {
@@ -37,12 +35,63 @@
     background-color: #009788; 
 }
 
+.notifi{
+    height: 80px;
+    background-color: #9ee1fe;
+    display: flex;
+    align-items: center;
+}
+
+.user {
+    background-color: white;
+    display: flex;
+    padding-left: 3px;
+    
+}
+
+
 #main {
-	/* display: flex; */
+    /* display: flex; */
 	/* justify-content: center; */
 	/* align-items: center; */
 	background-color: #dadbd5;
 	position: relative;
+}
+
+.roundInput {
+    background-color: white;
+    width: 90%;
+    border-radius: 15px;
+    height: 75%;
+    display: flex;
+    position: relative;
+}
+
+.search .roundInput {
+    padding-left: 35px;
+}
+
+.input {
+    flex-grow:1;
+    border: 0;
+}
+
+.search .fa-search{
+    position: absolute;
+    left: 12px;
+    top: 25%;
+}
+
+.ico{
+    display: flex;
+    flex-basis: 15%;
+    justify-content: space-between;
+}
+
+/* CLASSI PER LA STRUTTURA */
+
+.bottom {
+    height: 88vh;
 }
 
 .barUI {
@@ -50,20 +99,10 @@
     height: 70px;
     border: 1px solid white;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     /* flex-direction: column; */
-}
-
-.roundInput {
-	background-color: white;
-	height: 70%;
-	width: 85%;
-	border-radius: 10px;
-}    
-
-.bottom {
-    height: 85vh;
+    padding: 15px;
 }
 
 .container{
@@ -78,14 +117,14 @@
 }
 
 .column {
-	height: 300px;
-	/* background-color: rgb(155, 134, 134); */
+    height: 300px;
+	background-color: #ededed;
 	width: 34%;
 	height: 100%;
 }
 
 #column-right {
-	width: 66%;
+    width: 66%;
 	/* margin-left: 5px; */
 	background-image: url(/img/mine.jpg);
 	display: flex;
@@ -93,18 +132,30 @@
 	justify-content: space-between;
 }
 
-
-
-
-
 /* CLASSI PER I MESSAGGI */
+.chat{
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 140px);
+    padding: 15px;
+}
+
 .sent{
+    
     background-color: green;
     border-radius: 5px;
+    align-self:flex-end;
+    width: 75px;
+    height: 50px;
 
 }
 
 .received{
-    border: 1px solid black;
+
+    background-color: white;
     border-radius: 5px;
+    align-self: flex-start;
+    width: 75px;
+    height: 50px;
+
 }
