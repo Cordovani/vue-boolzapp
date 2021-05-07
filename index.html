@@ -56,8 +56,10 @@
                 <!-- search area -->
                 <div class="search">
                     <div class="roundInput">
-                        <i class="fa fa-search" aria-hidden="true"></i>
-                        <input class="input" type="text" placeholder="cerca o inizia una nuova chat">
+                        <i class="fa fa-search" aria-hidden="false"></i>
+                        <!-- v-model per legare l'input a Vue -->
+                        <input type="text" placeholder="cerca o inizia una nuova chat" 
+                        v-model="searchText" >
                     </div>
                 </div>
 
@@ -66,7 +68,7 @@
 
                     <!-- v-for per popolare la lista contatti-->
                     <!-- key come identificativo unico -->
-                    <div class="user" v-for="(user, index) in usersList" :key="index" @click="onUserClick(user)">
+                    <div class="user" v-for="(user, index) in filterUser" :key="index" @click="onUserClick(user)">
                         <img :src="getAvatarPath(user.avatar)" alt="immagine utente" class="bigIco">
                         <!-- nome e "non ci sono messaggi" -->
 
@@ -116,7 +118,7 @@
 
                     <div class="roundInput">
                         <!-- prendo l'input dell'utente e lo pusho nell'array di selectedUser -->
-                        <input class="input" type="text" @keyup.enter="sendMessage" v-model="newText">
+                        <input type="text" @keyup.enter="sendMessage" v-model="newText">
                     </div>
 
                     <i class="fa fa-microphone" aria-hidden="true"></i>
@@ -128,7 +130,6 @@
     <!-- formatto le date con moment.js -->
     <script src="JS/contatti.js"></script>
     <script src="JS/script.js"></script>
-
 
 </body>
 
